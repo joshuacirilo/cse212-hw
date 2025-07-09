@@ -8,12 +8,27 @@ public static class Arrays
     /// <returns>array of doubles that are the multiples of the supplied number</returns>
     public static double[] MultiplesOf(double number, int length)
     {
-        // TODO Problem 1 Start
-        // Remember: Using comments in your program, write down your process for solving this problem
-        // step by step before you write the code. The plan should be clear enough that it could
-        // be implemented by another person.
 
-        return []; // replace this return statement with your own
+        //-get the original number and the number of multiples
+        //- create the blank list 
+        //- for (i <= number of multiples)
+        //- multiples= multiples + the original number
+        //-add multiples to the list
+        //- for end 
+        //- return the list with the multiples 
+        double originalNumber = number;
+        int originalLength = length;
+        double operation1 = 0;
+
+        List<double> listOfMultiples = new List<double>();
+
+        for (int i = 1; i <= originalLength; i++)
+        {
+            operation1 = operation1 + originalNumber;
+            listOfMultiples.Add(operation1);
+        }
+
+        return listOfMultiples.ToArray(); // replace this return statement with your own
     }
 
     /// <summary>
@@ -25,9 +40,28 @@ public static class Arrays
     /// </summary>
     public static void RotateListRight(List<int> data, int amount)
     {
-        // TODO Problem 2 Start
-        // Remember: Using comments in your program, write down your process for solving this problem
-        // step by step before you write the code. The plan should be clear enough that it could
-        // be implemented by another person.
+    
+        //-get the data 
+        //-check if the rotation is need 
+        //-find the split point 
+        //-split the list 
+        //-put together the differents parts
+        //and modify the dat
+    int count = data.Count;
+
+
+    if (count == 0 || amount == 0 || amount == count)
+        return;
+
+    int splitIndex = count - amount;
+
+    List<int> endPart = data.GetRange(splitIndex, amount); 
+    List<int> startPart = data.GetRange(0, splitIndex);    
+
+    data.Clear();
+    data.AddRange(endPart);
+    data.AddRange(startPart);
+
+
     }
 }

@@ -42,10 +42,10 @@ public class LinkedList : IEnumerable<int>
         }
 
         // If the list is not empty, then only tail will be affected.
-        else
+        else if (_tail is not null)
         {
             newNode.Prev = _tail; // Connect new node to the previous tail
-            _tail!.Next = newNode; // Connect to the node next to the new node
+            _tail.Next = newNode; // Connect to the node next to the new node
             _tail = newNode; // Update the head to point to the new node
         }
 
@@ -81,7 +81,22 @@ public class LinkedList : IEnumerable<int>
     /// </summary>
     public void RemoveTail()
     {
-        // TODO Problem 2
+        // If the list has only one item in it, then set head and tail 
+        // to null resulting in an empty list.  This condition will also
+        // cover an empty list.  Its okay to set to null again.
+        if (_head == _tail)
+        {
+            _head = null;
+            _tail = null;
+        }
+
+           // If the list has more than one item in it, then only the tail
+        // will be affected.
+        else if (_tail is not null)
+        {
+            _tail.Prev!.Next = null; // Disconnect the penultimate node from the last node
+            _tail = _tail.Prev; // Update the tail to point to the penultimate node
+        }
     }
 
     /// <summary>
@@ -185,8 +200,10 @@ public class LinkedList : IEnumerable<int>
     }
 }
 
-public static class IntArrayExtensionMethods {
-    public static string AsString(this IEnumerable array) {
+public static class IntArrayExtensionMethods
+{
+    public static string AsString(this IEnumerable array)
+    {
         return "<IEnumerable>{" + string.Join(", ", array.Cast<int>()) + "}";
     }
 }

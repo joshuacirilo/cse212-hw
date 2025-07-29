@@ -140,7 +140,41 @@ public class LinkedList : IEnumerable<int>
     /// </summary>
     public void Remove(int value)
     {
-        // TODO Problem 3
+        //we are using this to assign to current thhe data of our linked list 
+        Node? current = _head;
+
+        while (current is not null)
+        {
+            if (current.Data == value)
+            {
+
+                // we need to evaluate if the current data is the head
+
+                if (current == _head)
+                {
+                    RemoveHead();
+                }
+
+                else if (current == _tail)
+                {
+                    RemoveTail();
+                }
+                else
+                {
+                    current.Prev!.Next = current.Next;
+                    current.Next!.Prev = current.Prev;
+                }
+
+                return;
+            }
+
+            current = current.Next; 
+
+
+
+        }
+
+
     }
 
     /// <summary>

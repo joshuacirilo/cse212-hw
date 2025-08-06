@@ -100,90 +100,90 @@ public class PermutationsChooseTests
     }
 }
 
-// [TestClass]
-// public class CountWaysToClimbTests
-// {
-//     [TestMethod]
-//     public void CountWaysToClimb_Small()
-//     {
-//         var result = Recursion.CountWaysToClimb(5);
-//         Assert.AreEqual(13, result);
-//     }
+[TestClass]
+public class CountWaysToClimbTests
+{
+    [TestMethod]
+    public void CountWaysToClimb_Small()
+    {
+        var result = Recursion.CountWaysToClimb(5);
+        Assert.AreEqual(13, result);
+    }
 
-//     [TestMethod]
-//     public void CountWaysToClimb_Medium()
-//     {
-//         var result = Recursion.CountWaysToClimb(20);
-//         Assert.AreEqual(121415, result);
-//     }
+    [TestMethod]
+    public void CountWaysToClimb_Medium()
+    {
+        var result = Recursion.CountWaysToClimb(20);
+        Assert.AreEqual(121415, result);
+    }
 
-//     [TestMethod, Timeout(5000)]
-//     public void CountWaysToClimb_Large()
-//     {
-//         var result = Recursion.CountWaysToClimb(100);
-//         Assert.AreEqual(180396380815100901214157639M, result);
-//     }
-// }
+    [TestMethod, Timeout(5000)]
+    public void CountWaysToClimb_Large()
+    {
+        var result = Recursion.CountWaysToClimb(100);
+        Assert.AreEqual(180396380815100901214157639M, result);
+    }
+}
 
-// [TestClass]
-// public class WildcardBinaryTests
-// {
-//     [TestMethod]
-//     public void WildcardBinary_6_Long()
-//     {
-//         var results = new List<string>();
-//         Recursion.WildcardBinary("110*0*", results);
+[TestClass]
+public class WildcardBinaryTests
+{
+    [TestMethod]
+    public void WildcardBinary_6_Long()
+    {
+        var results = new List<string>();
+        Recursion.WildcardBinary("110*0*", results);
 
-//         results.Sort();
-//         var expected = new List<string> {
-//             "110000",
-//             "110001",
-//             "110100",
-//             "110101"
-//         };
-//         CollectionAssert.AreEqual(expected, results);
-//     }
+        results.Sort();
+        var expected = new List<string> {
+            "110000",
+            "110001",
+            "110100",
+            "110101"
+        };
+        CollectionAssert.AreEqual(expected, results);
+    }
 
-//     [TestMethod]
-//     public void WildcardBinary_EmptyString()
-//     {
-//         var results = new List<string>();
-//         Recursion.WildcardBinary("", results);
+    [TestMethod]
+    public void WildcardBinary_EmptyString()
+    {
+        var results = new List<string>();
+        Recursion.WildcardBinary("", results);
 
-//         var expected = new List<string> { "" };
-//         CollectionAssert.AreEqual(expected, results);
-//     }
+        var expected = new List<string> { "" };
+        CollectionAssert.AreEqual(expected, results);
+    }
 
-//     [TestMethod]
-//     public void WildcardBinary_NoWildcards()
-//     {
-//         var results = new List<string>();
-//         Recursion.WildcardBinary("101010101100", results);
+    [TestMethod]
+    public void WildcardBinary_NoWildcards()
+    {
+        var results = new List<string>();
+        Recursion.WildcardBinary("101010101100", results);
 
-//         var expected = new List<string> { "101010101100" };
-//         CollectionAssert.AreEqual(expected, results);
-//     }
+        var expected = new List<string> { "101010101100" };
+        CollectionAssert.AreEqual(expected, results);
+    }
 
-//     [TestMethod]
-//     public void WildcardBinary_3_Long()
-//     {
-//         var results = new List<string>();
-//         Recursion.WildcardBinary("***", results);
+    [TestMethod]
+    public void WildcardBinary_3_Long()
+    {
+        var results = new List<string>();
+        Recursion.WildcardBinary("***", results);
 
-//         results.Sort();
-//         var expected = new List<string> {
-//             "000",
-//             "001",
-//             "010",
-//             "011",
-//             "100",
-//             "101",
-//             "110",
-//             "111"
-//         };
-//         CollectionAssert.AreEqual(expected, results);
-//     }
-// }
+        results.Sort();
+        var expected = new List<string> {
+            "000",
+            "001",
+            "010",
+            "011",
+            "100",
+            "101",
+            "110",
+            "111"
+        };
+        CollectionAssert.AreEqual(expected, results);
+    }
+}
 
 // [TestClass]
 // public class SolveMazeTests
